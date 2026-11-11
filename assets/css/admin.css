@@ -1,0 +1,187 @@
+/* ==========================================================================
+   ADMIN PORTAL TACTICAL THEME
+   Bajrang Kumar Sarraf - Cybersecurity Specialist Portfolio CMS
+   ========================================================================== */
+
+:root {
+    --admin-bg-dark: #080c14;
+    --admin-bg-card: rgba(13, 19, 34, 0.85);
+    --admin-border: rgba(30, 41, 59, 0.9);
+    --admin-border-focus: rgba(16, 185, 129, 0.5);
+    --admin-emerald: #10b981;
+    --admin-cyan: #06b6d4;
+    --admin-rose: #f43f5e;
+}
+
+body {
+    background-color: var(--admin-bg-dark);
+    color: #f1f5f9;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    min-height: 100vh;
+}
+
+/* Glassmorphism Panels */
+.admin-card {
+    background: var(--admin-bg-card);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--admin-border);
+    border-radius: 14px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.6);
+    transition: border-color 0.2s ease;
+}
+
+.admin-card:hover {
+    border-color: rgba(16, 185, 129, 0.3);
+}
+
+/* Tactical Form Controls */
+.admin-input {
+    background-color: #0b101c;
+    border: 1px solid #1e293b;
+    color: #f8fafc;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+.admin-input:focus {
+    outline: none;
+    border-color: var(--admin-cyan);
+    box-shadow: 0 0 12px -2px rgba(6, 182, 212, 0.35);
+}
+
+/* Tactical Table */
+.admin-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.admin-table th {
+    background: #0b1120;
+    color: #94a3b8;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 12px 16px;
+    border-bottom: 1px solid #1e293b;
+}
+
+.admin-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid rgba(30, 41, 59, 0.6);
+    font-size: 0.85rem;
+    vertical-align: middle;
+}
+
+.admin-table tbody tr {
+    transition: background-color 0.15s ease;
+}
+
+.admin-table tbody tr:hover {
+    background-color: rgba(16, 185, 129, 0.04);
+}
+
+/* Switch Toggles for Animation Settings */
+.switch-container {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 26px;
+}
+
+.switch-container input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.switch-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #1e293b;
+    transition: .3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 34px;
+    border: 1px solid #334155;
+}
+
+.switch-slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: #94a3b8;
+    transition: .3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 50%;
+}
+
+input:checked + .switch-slider {
+    background-color: #10b981;
+    border-color: #059669;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
+}
+
+input:checked + .switch-slider:before {
+    transform: translateX(22px);
+    background-color: #04140b;
+}
+
+/* Drag-and-Drop Image Dropzone */
+.dropzone-box {
+    border: 2px dashed #1e293b;
+    border-radius: 12px;
+    background-color: #090e19;
+    padding: 24px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.dropzone-box:hover,
+.dropzone-box.dragover {
+    border-color: var(--admin-emerald);
+    background-color: rgba(16, 185, 129, 0.05);
+}
+
+.preview-thumbnail {
+    width: 100%;
+    max-height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #1e293b;
+}
+
+/* Sidebar Navigation */
+.admin-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    border-radius: 9px;
+    color: #94a3b8;
+    font-size: 0.85rem;
+    font-family: 'JetBrains Mono', monospace;
+    transition: all 0.2s ease;
+}
+
+.admin-nav-item:hover {
+    color: #10b981;
+    background-color: rgba(16, 185, 129, 0.08);
+}
+
+.admin-nav-item.active {
+    color: #00ff9d;
+    background-color: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    font-weight: 600;
+}

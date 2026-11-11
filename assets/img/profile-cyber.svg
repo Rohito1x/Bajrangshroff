@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080c14" />
+      <stop offset="50%" stop-color="#0d1322" />
+      <stop offset="100%" stop-color="#111827" />
+    </linearGradient>
+    <linearGradient id="cyberGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00ff9d" />
+      <stop offset="100%" stop-color="#10b981" />
+    </linearGradient>
+    <linearGradient id="cyberCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00e5ff" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="400" height="400" rx="28" fill="url(#bgGrad)" stroke="#1e293b" stroke-width="2"/>
+  
+  <!-- Outer Cyber Circle Frame -->
+  <circle cx="200" cy="200" r="160" fill="none" stroke="rgba(16, 185, 129, 0.15)" stroke-width="2" stroke-dasharray="6,6"/>
+  <circle cx="200" cy="200" r="145" fill="none" stroke="url(#cyberGreen)" stroke-width="3" filter="url(#glow)"/>
+  
+  <!-- Tech Reticle Marks -->
+  <line x1="200" y1="30" x2="200" y2="45" stroke="#10b981" stroke-width="3" />
+  <line x1="200" y1="355" x2="200" y2="370" stroke="#10b981" stroke-width="3" />
+  <line x1="30" y1="200" x2="45" y2="200" stroke="#10b981" stroke-width="3" />
+  <line x1="355" y1="200" x2="370" y2="200" stroke="#10b981" stroke-width="3" />
+
+  <!-- Shield Shape Backdrop -->
+  <path d="M200,90 L280,125 C280,210 200,265 200,285 C200,265 120,210 120,125 Z" fill="#0f172a" stroke="url(#cyberCyan)" stroke-width="3" filter="url(#glow)"/>
+
+  <!-- Terminal Symbol Inside Shield -->
+  <path d="M165,160 L195,190 L165,220" stroke="#00ff9d" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none" filter="url(#glow)"/>
+  <line x1="205" y1="220" x2="235" y2="220" stroke="#06b6d4" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+
+  <!-- Status / Lock Beacon -->
+  <circle cx="200" cy="125" r="5" fill="#10b981" filter="url(#glow)"/>
+  
+  <!-- Lower Data HUD Pill -->
+  <rect x="100" y="315" width="200" height="32" rx="16" fill="#090e17" stroke="#10b981" stroke-width="1.5"/>
+  <text x="200" y="336" fill="#00ff9d" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="bold" text-anchor="middle" letter-spacing="1">BAJRANG_SEC_OPS</text>
+</svg>

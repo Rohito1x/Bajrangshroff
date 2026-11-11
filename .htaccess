@@ -1,0 +1,31 @@
+# Apache Security Hardening & Configuration
+# Profile: Bajrang Kumar Sarraf - Cybersecurity Specialist & Web Developer
+
+# Disable Directory Browsing
+Options -Indexes
+
+# UTF-8 Encoding
+AddDefaultCharset UTF-8
+
+# Protect sensitive files and storage
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+
+<FilesMatch "(^#.*#|\.(bak|config|sql|fla|psd|ini|log|sh|inc|swp|dist)|~)$">
+    Require all denied
+</FilesMatch>
+
+# Enable FollowSymLinks if supported
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /Bajrangss/
+</IfModule>
+
+# Security Headers (Fallback if not handled by PHP)
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

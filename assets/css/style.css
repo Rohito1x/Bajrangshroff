@@ -1,0 +1,347 @@
+/* ==========================================================================
+   PORTFOLIO STYLING: CYBERPUNK MINIMALIST & HARDENED THEME
+   Target: Bajrang Kumar Sarraf - Cybersecurity Specialist & Web Developer
+   ========================================================================== */
+
+:root {
+    --bg-primary: #080c14;
+    --bg-secondary: #0d1322;
+    --bg-card: rgba(15, 23, 42, 0.75);
+    --border-card: rgba(30, 41, 59, 0.8);
+    --border-glow: rgba(16, 185, 129, 0.3);
+    --accent-green: #10b981;
+    --accent-emerald: #00ff9d;
+    --accent-cyan: #06b6d4;
+    --accent-indigo: #6366f1;
+    --text-primary: #f8fafc;
+    --text-muted: #94a3b8;
+    --terminal-bg: #050811;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #080c14;
+}
+::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 4px;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #10b981;
+}
+
+/* Base Body Grid Mesh */
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.cyber-grid-bg {
+    background-image: 
+        radial-gradient(rgba(16, 185, 129, 0.08) 1px, transparent 1px),
+        linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+    background-size: 24px 24px, 48px 48px, 48px 48px;
+    background-position: 0 0, 0 0, 0 0;
+}
+
+/* Monospace font for security / code contexts */
+.font-mono-code {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+}
+
+/* Glassmorphism Card */
+.glass-panel {
+    background: var(--bg-card);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.glass-panel:hover {
+    border-color: rgba(16, 185, 129, 0.4);
+    box-shadow: 0 15px 35px -10px rgba(16, 185, 129, 0.15);
+}
+
+/* Subtle Glowing Borders */
+.border-glow-green {
+    box-shadow: 0 0 15px -3px rgba(16, 185, 129, 0.25);
+    border-color: rgba(16, 185, 129, 0.4) !important;
+}
+
+.border-glow-cyan {
+    box-shadow: 0 0 15px -3px rgba(6, 182, 212, 0.25);
+    border-color: rgba(6, 182, 212, 0.4) !important;
+}
+
+/* Neon Text Glow */
+.glow-text-green {
+    text-shadow: 0 0 12px rgba(16, 185, 129, 0.6);
+}
+
+.glow-text-cyan {
+    text-shadow: 0 0 12px rgba(6, 182, 212, 0.6);
+}
+
+/* Animated Radar Pulse */
+.pulse-beacon {
+    position: relative;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #10b981;
+}
+
+.pulse-beacon::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #10b981;
+    animation: beacon-wave 2s infinite ease-out;
+}
+
+@keyframes beacon-wave {
+    0% {
+        transform: scale(0.5);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2.2);
+        opacity: 0;
+    }
+}
+
+/* Blinking Cursor */
+.terminal-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 18px;
+    background-color: var(--accent-green);
+    margin-left: 4px;
+    vertical-align: middle;
+    animation: cursor-blink 1s infinite;
+}
+
+@keyframes cursor-blink {
+    0%, 49% {
+        opacity: 1;
+    }
+    50%, 100% {
+        opacity: 0;
+    }
+}
+
+/* Terminal Console Styling */
+.terminal-container {
+    background-color: var(--terminal-bg);
+    border: 1px solid #1e293b;
+    border-radius: 10px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(16, 185, 129, 0.05);
+}
+
+.terminal-header {
+    background: #0f172a;
+    border-bottom: 1px solid #1e293b;
+    padding: 10px 16px;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.terminal-dots {
+    display: flex;
+    gap: 7px;
+}
+
+.terminal-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.dot-red { background: #ef4444; }
+.dot-yellow { background: #f59e0b; }
+.dot-green { background: #10b981; }
+
+.terminal-body {
+    padding: 18px;
+    min-height: 420px;
+    max-height: 560px;
+    overflow-y: auto;
+    font-size: 0.82rem;
+    line-height: 1.55;
+    font-family: 'JetBrains Mono', monospace;
+    scroll-behavior: smooth;
+}
+
+/* Cyber Button */
+.cyber-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    border-radius: 8px;
+    transition: all 0.25s ease;
+    overflow: hidden;
+}
+
+.cyber-btn-primary {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: #041009;
+    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.35);
+}
+
+.cyber-btn-primary:hover {
+    box-shadow: 0 6px 28px rgba(16, 185, 129, 0.55);
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+}
+
+.cyber-btn-secondary {
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #e2e8f0;
+}
+
+.cyber-btn-secondary:hover {
+    border-color: #10b981;
+    color: #10b981;
+    background: rgba(16, 185, 129, 0.08);
+    transform: translateY(-2px);
+}
+
+/* Glitch Accent text effect on hover */
+.glitch-hover:hover {
+    animation: subtle-glitch 0.3s ease-in-out;
+}
+
+@keyframes subtle-glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 1px); }
+    40% { transform: translate(2px, -1px); }
+    60% { transform: translate(-1px, 2px); }
+    80% { transform: translate(1px, -1px); }
+    100% { transform: translate(0); }
+}
+
+/* Timeline vertical line */
+.timeline-stem {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 20px;
+    width: 2px;
+    background: linear-gradient(to bottom, #10b981, #06b6d4, #6366f1, transparent);
+}
+
+@media (min-width: 768px) {
+    .timeline-stem {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+/* Scanlines overlay effect for terminal */
+.scanlines-overlay {
+    background: linear-gradient(
+        rgba(18, 16, 16, 0) 50%, 
+        rgba(0, 0, 0, 0.25) 50%
+    ), linear-gradient(
+        90deg,
+        rgba(255, 0, 0, 0.03),
+        rgba(0, 255, 0, 0.01),
+        rgba(0, 0, 255, 0.03)
+    );
+    background-size: 100% 3px, 3px 100%;
+    pointer-events: none;
+}
+
+/* Code Badge */
+.cyber-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.badge-emerald {
+    background: rgba(16, 185, 129, 0.12);
+    color: #34d399;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.badge-cyan {
+    background: rgba(6, 182, 212, 0.12);
+    color: #22d3ee;
+    border: 1px solid rgba(6, 182, 212, 0.3);
+}
+
+.badge-indigo {
+    background: rgba(99, 102, 241, 0.12);
+    color: #a5b4fc;
+    border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+.badge-amber {
+    background: rgba(245, 158, 11, 0.12);
+    color: #fbbf24;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.badge-red {
+    background: rgba(239, 68, 68, 0.12);
+    color: #f87171;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+/* Smooth filtering transitions */
+.project-card {
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card.is-hidden {
+    display: none;
+    opacity: 0;
+    transform: scale(0.92);
+}
+
+/* Toast Notification */
+#toast-notification {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: translateY(100px);
+    opacity: 0;
+    pointer-events: none;
+}
+
+#toast-notification.show {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
