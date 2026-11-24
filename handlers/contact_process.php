@@ -144,14 +144,15 @@ try {
         $pdo = Database::getConnection();
         $stmt = $pdo->prepare("
             INSERT INTO contact_messages (name, email, subject, message, ip_address, status, created_at)
-            VALUES (:name, :email, :subject, :message, :ip, 'unread', datetime('now'))
+            VALUES (:name, :email, :subject, :message, :ip, 'unread', :created_at)
         ");
         $stmt->execute([
             'name' => $name,
             'email' => $email,
             'subject' => $subject . (!empty($service) ? " [{$service}]" : ''),
             'message' => $message,
-            'ip' => PortfolioSecurity::getClientIp()
+            'ip' => PortfolioSecurity::getClientIp(),
+            'created_at' => date('Y-m-d H:i:s')
         ]);
     }
 } catch (Throwable $e) {

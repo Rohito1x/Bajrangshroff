@@ -131,12 +131,29 @@ The portfolio includes a password-protected, modern dark-themed custom Admin Por
 
 ## 💻 Running Locally
 
-### Option 1: Via XAMPP / Apache
-1. Place this folder in `c:\xampp\htdocs\Bajrangss`.
-2. Start the Apache module in the **XAMPP Control Panel**.
-3. Open your browser and navigate to:
+### Option 1: Via XAMPP (Apache + MySQL / MariaDB)
+1. Place this project inside `c:\xampp\htdocs\Bajrangss`.
+2. Start both **Apache** and **MySQL** in the **XAMPP Control Panel**.
+3. The database `bajrang_portfolio` is automatically created and seeded on first run! You can also manually import the included SQL dump if preferred:
+   ```powershell
+   mysql -u root -p -e "CREATE DATABASE IF NOT EXISTS bajrang_portfolio;"
+   mysql -u root -p bajrang_portfolio < database/bajrang_portfolio.sql
+   ```
+4. Open your browser and navigate to:
    - **Public Portfolio:** `http://localhost/Bajrangss/`
    - **Admin CMS Portal:** `http://localhost/Bajrangss/admin/`
+
+### Database Configuration & Cloud Environment Variables
+In `config/database.php`, MySQL is the active driver (`DB_DRIVER = 'mysql'`). You can configure credentials via code or standard environment variables (ideal for Azure App Service, Docker, or Linux VPS):
+
+| Setting | Env Variable | Default | Description |
+|---|---|---|---|
+| Driver | `DB_DRIVER` | `mysql` | `mysql` or `sqlite` |
+| Host | `DB_HOST` | `127.0.0.1` | MySQL server host |
+| Port | `DB_PORT` | `3306` | MySQL port |
+| Database | `DB_NAME` | `bajrang_portfolio` | Database name |
+| Username | `DB_USER` | `root` | Database user |
+| Password | `DB_PASS` | `""` | Database password |
 
 ### Option 2: Via PHP Built-in Server
 Open PowerShell in this directory and execute:

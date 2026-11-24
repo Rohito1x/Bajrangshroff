@@ -65,7 +65,7 @@ $recentProjects = $pdo->query("SELECT * FROM projects ORDER BY display_order ASC
             <div class="flex items-center gap-4 font-mono text-xs">
                 <span class="hidden sm:inline-flex items-center gap-1.5 text-slate-400">
                     <i class="fa-solid fa-server text-emerald-400 text-[10px]"></i>
-                    <span>SQLite_Active</span>
+                    <span><?= htmlspecialchars(Database::getDriverName()) ?>_Active</span>
                 </span>
                 <a href="logout.php" class="px-3 py-1.5 rounded-lg bg-rose-500/10 border border-rose-500/30 text-rose-300 hover:bg-rose-500/20 transition-colors">
                     <i class="fa-solid fa-power-off mr-1"></i> Sign Out
